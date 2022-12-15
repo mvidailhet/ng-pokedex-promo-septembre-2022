@@ -1,18 +1,21 @@
 <h2>Pokémons</h2>
 
-<div>
-  <div>
-    <input class="form-control" type="text" (input)="onInputChange($event)">
-  </div>
+<div class="mb-4">
   <div>
     <input type="text" class="form-control" [(ngModel)]="currentPokemonName">
   </div>
   <button (click)="onButtonClick()" [disabled]="isButtonDisabled" class="btn btn-primary">click me</button>
 </div>
 
-<div>
-  {{ currentPokemonName }}
+<div class="mb-4" *ngIf="hasAddedAPokemon; else noPokemon">
+  Un pokémon a été ajouté
 </div>
+
+<ng-template #noPokemon>
+  <div class="mb-4">
+    Aucun pokémon n'a été ajouté
+  </div>
+</ng-template>
 
 <app-pokemon-item></app-pokemon-item>
 

@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class PokemonsListComponent {
   isButtonDisabled = true;
-
   currentPokemonName = 'bulbizarre';
+
+  hasAddedAPokemon = false;
 
   constructor() {
     setTimeout(() => {
@@ -17,12 +18,6 @@ export class PokemonsListComponent {
   }
 
   onButtonClick() {
-    console.log('clicked');
-  }
-
-  onInputChange(event: Event) {
-    const inputElt = event.target as HTMLInputElement;
-    this.currentPokemonName = inputElt.value;
-    console.log(inputElt.value);
+    this.hasAddedAPokemon = !this.hasAddedAPokemon;
   }
 }
