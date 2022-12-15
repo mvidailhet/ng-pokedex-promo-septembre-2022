@@ -8,9 +8,21 @@ import { Component } from '@angular/core';
 export class PokemonsListComponent {
   isButtonDisabled = true;
 
+  currentPokemonName = 'bulbizarre';
+
   constructor() {
     setTimeout(() => {
       this.isButtonDisabled = false;
-    }, 3000);
+    }, 2000);
+  }
+
+  onButtonClick() {
+    console.log('clicked');
+  }
+
+  onInputChange(event: Event) {
+    const inputElt = event.target as HTMLInputElement;
+    this.currentPokemonName = inputElt.value;
+    console.log(inputElt.value);
   }
 }

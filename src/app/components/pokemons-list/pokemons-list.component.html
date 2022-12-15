@@ -1,7 +1,17 @@
 <h2>Pokémons</h2>
 
 <div>
-  <button [disabled]="isButtonDisabled" class="btn btn-primary">click me</button>
+  <div>
+    <input class="form-control" type="text" (input)="onInputChange($event)">
+  </div>
+  <div>
+    <input type="text" class="form-control" [(ngModel)]="currentPokemonName">
+  </div>
+  <button (click)="onButtonClick()" [disabled]="isButtonDisabled" class="btn btn-primary">click me</button>
+</div>
+
+<div>
+  {{ currentPokemonName }}
 </div>
 
 <app-pokemon-item></app-pokemon-item>
