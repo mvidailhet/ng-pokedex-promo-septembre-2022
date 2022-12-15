@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./pokemon-item.component.scss']
 })
 export class PokemonItemComponent {
+  name = 'Bulbizarre';
+  level = 10;
 
+  getLevel() {
+    return this.level.toString();
+  }
 }
