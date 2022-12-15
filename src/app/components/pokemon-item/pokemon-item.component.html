@@ -1,6 +1,10 @@
-<div>
-  {{ name }}
+<div [ngStyle]="{ 'background-color': sex === 'male' ? '#0d6efd' : '#ef99a7', 'color':  sex === 'male' ? 'white' : '#4d4d4d'}">
+  <div>
+    {{ name }}
+  </div>
+  <div>
+    {{ level }}
+  </div>
 </div>
-<div>
-  {{ level }}
-</div>
+
+

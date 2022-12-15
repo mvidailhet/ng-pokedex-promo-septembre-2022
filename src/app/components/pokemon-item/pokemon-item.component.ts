@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class PokemonItemComponent {
   name = 'Bulbizarre';
   level = 10;
+  sex: 'male' | 'female' = Math.random() < 0.5 ? 'male' : 'female';
 
   getLevel() {
     return this.level.toString();
