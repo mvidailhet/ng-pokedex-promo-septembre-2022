@@ -1,5 +1,29 @@
-$primaryColor: #0d6efd;
+$femaleColor: #ef99a7;
+$femaleTextColor: #4d4d4d;
 
-.pokemon {
-  color: $primaryColor;
+$maleColor: #0d6efd;
+$maleTextColor: white;
+
+$sex-colors: (
+  "male": (
+    'color': #0d6efd,
+    "text": white
+  ),
+  "female": (
+    'color': #ef99a7,
+    "text": 4d4d4d
+  )
+);
+
+.pokemon-item {
+
+  &.sex-male {
+    background-color: $maleColor;
+    color: $maleTextColor;
+  }
+
+  &.sex-female {
+    background-color: $femaleColor;
+    color: $femaleTextColor;
+  }
 }
