@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./pokemons-list.component.scss']
 })
 export class PokemonsListComponent {
+  isButtonDisabled = true;
 
+  constructor() {
+    setTimeout(() => {
+      this.isButtonDisabled = false;
+    }, 3000);
+  }
 }
