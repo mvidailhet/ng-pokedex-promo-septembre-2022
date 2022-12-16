@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
 export class PokemonsListComponent {
   isButtonDisabled = true;
   currentPokemonName = 'bulbizarre';
-
   hasAddedAPokemon = false;
+
+  pokemons: string[] = [];
 
   constructor() {
     setTimeout(() => {
@@ -17,7 +18,8 @@ export class PokemonsListComponent {
     }, 2000);
   }
 
-  onButtonClick() {
-    this.hasAddedAPokemon = !this.hasAddedAPokemon;
+  onAddPokemonBtnClick() {
+    this.hasAddedAPokemon = true;
+    this.pokemons.push(this.currentPokemonName);
   }
 }

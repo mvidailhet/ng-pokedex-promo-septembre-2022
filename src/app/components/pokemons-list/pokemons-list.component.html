@@ -5,7 +5,7 @@
     <input type="text" class="form-control" [(ngModel)]="currentPokemonName">
   </div>
   <div class="col-3">
-    <button (click)="onButtonClick()" [disabled]="isButtonDisabled" class="btn btn-primary">Add</button>
+    <button (click)="onAddPokemonBtnClick()" [disabled]="isButtonDisabled" class="btn btn-primary">Add</button>
   </div>
 </div>
 
@@ -19,5 +19,8 @@
   </div>
 </ng-template>
 
-<app-pokemon-item></app-pokemon-item>
+<ng-container *ngFor="let pokemon of pokemons; let i = index">
+  <span class="index">{{ i }}</span> <app-pokemon-item></app-pokemon-item>
+</ng-container>
+
 
