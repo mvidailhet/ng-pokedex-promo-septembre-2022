@@ -1,29 +1,30 @@
-$femaleColor: #ef99a7;
-$femaleTextColor: #4d4d4d;
-
-$maleColor: #0d6efd;
-$maleTextColor: white;
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+      $map: map-get($map, $key);
+  }
+  @return $map;
+}
 
 $sex-colors: (
-  "male": (
-    'color': #0d6efd,
-    "text": white
+  male: (
+    color: #0d6efd,
+    text: white
   ),
-  "female": (
-    'color': #ef99a7,
-    "text": 4d4d4d
+  female: (
+    color: #ef99a7,
+    text: #4d4d4d
   )
 );
 
 .pokemon-item {
 
   &.sex-male {
-    background-color: $maleColor;
-    color: $maleTextColor;
+    background-color: map-deep-get($sex-colors, "male", "color");
+    color: map-deep-get($sex-colors, "male", "text");
   }
 
   &.sex-female {
-    background-color: $femaleColor;
-    color: $femaleTextColor;
+    background-color: map-deep-get($sex-colors, "female", "color");
+    color: map-deep-get($sex-colors, "female", "text");
   }
 }
