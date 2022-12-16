@@ -9,6 +9,10 @@
   @return $map;
 }
 
+:host {
+  display: block;
+}
+
 $sex-colors: (
   male: (
     color: $primary,
@@ -34,5 +38,9 @@ $sex-colors: (
 
   .name-col {
     text-transform: capitalize;
+  }
+
+  .image {
+    width: 100%;
   }
 }

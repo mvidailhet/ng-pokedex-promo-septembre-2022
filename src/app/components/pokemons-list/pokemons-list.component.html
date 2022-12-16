@@ -3,6 +3,11 @@
 <div class="mb-4 row">
   <div class="col-9">
     <input type="text" class="form-control" [(ngModel)]="currentPokemonName">
+    <input type="text" class="form-control" [(ngModel)]="currentPokemonPicture">
+    <select [(ngModel)]="currentPokemonSex">
+      <option ngValue="male">male</option>
+      <option ngValue="female">female</option>
+    </select>
   </div>
   <div class="col-3">
     <button (click)="onAddPokemonBtnClick()" [disabled]="isButtonDisabled" class="btn btn-primary">Add</button>
@@ -20,8 +25,7 @@
 </ng-template>
 
 <ng-container *ngFor="let pokemon of pokemons; let i = index">
-  <span class="index">{{ i }}</span>
-  <app-pokemon-item [name]="pokemon.name" (onDelete)="onDeletePokemon($event, i)" [level]="pokemon.level"></app-pokemon-item>
+  <app-pokemon-item [name]="pokemon.name" [picture]="pokemon.picture" [sex]="pokemon.sex" (onDelete)="onDeletePokemon($event, i)" [level]="pokemon.level"></app-pokemon-item>
 </ng-container>
 
 

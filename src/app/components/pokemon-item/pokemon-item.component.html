@@ -1,5 +1,8 @@
 <div class="pokemon-item row p-3 align-items-center" [ngClass]="{'sex-male': this.sex === 'male', 'sex-female': this.sex === 'female'}">
-  <div class="col-9 name-col">
+  <div class="col-4">
+    <img class="image" [src]="picture ?? defaultImg" alt="pokemon image">
+  </div>
+  <div class="col-5 name-col">
     {{ name }} - {{ level }}
   </div>
   <div class="col-3">
