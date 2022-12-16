@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Pokemon, PokemonSex } from 'src/app/typings/pokemon';
 
 
@@ -30,7 +31,7 @@ export class PokemonsListComponent {
     },
   ];
 
-  constructor() {
+  constructor(private router: Router) {
     setTimeout(() => {
       this.isButtonDisabled = false;
     }, 2000);
@@ -50,5 +51,9 @@ export class PokemonsListComponent {
   onDeletePokemon(name: string, index: number) {
     console.log(`deleting pokemon ${name}`);
     this.pokemons.splice(index, 1);
+  }
+
+  goToPokemonPage() {
+    this.router.navigate(['/pokemon']);
   }
 }
