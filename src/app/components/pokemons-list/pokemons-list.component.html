@@ -25,8 +25,7 @@
 </ng-template>
 
 <ng-container *ngFor="let pokemon of pokemons; let i = index">
-  <!-- <app-pokemon-item [routerLink]="['/pokemon']" [name]="pokemon.name" [picture]="pokemon.picture" [sex]="pokemon.sex" (onDelete)="onDeletePokemon($event, i)" [level]="pokemon.level"></app-pokemon-item> -->
-  <app-pokemon-item (click)="goToPokemonPage()" [name]="pokemon.name" [picture]="pokemon.picture" [sex]="pokemon.sex" (onDelete)="onDeletePokemon($event, i)" [level]="pokemon.level"></app-pokemon-item>
+  <app-pokemon-item [routerLink]="['/pokemon', pokemon.name]" [name]="pokemon.name" [picture]="pokemon.picture" [sex]="pokemon.sex" (onDelete)="onDeletePokemon($event, i)" [level]="pokemon.level"></app-pokemon-item>
 </ng-container>
 
 

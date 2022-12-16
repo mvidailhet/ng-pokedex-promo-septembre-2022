@@ -7,9 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent {
+  name?: string;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
-
+    this.name = this.activatedRoute.snapshot.params['name'];
   }
 
   goToPokemonPage() {
