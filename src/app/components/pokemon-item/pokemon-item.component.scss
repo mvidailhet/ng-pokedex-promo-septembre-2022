@@ -31,4 +31,8 @@ $sex-colors: (
     background-color: map-deep-get($sex-colors, "female", "color");
     color: map-deep-get($sex-colors, "female", "text");
   }
+
+  .name-col {
+    text-transform: capitalize;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-item',
@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./pokemon-item.component.scss']
 })
 export class PokemonItemComponent {
-  name = 'Bulbizarre';
-  level = 10;
+  @Input() name = 'Bulbizarre';
+  @Input() level = 10;
   sex: 'male' | 'female' = Math.random() < 0.5 ? 'male' : 'female';
 
   getLevel() {

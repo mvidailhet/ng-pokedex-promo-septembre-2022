@@ -20,7 +20,8 @@
 </ng-template>
 
 <ng-container *ngFor="let pokemon of pokemons; let i = index">
-  <span class="index">{{ i }}</span> <app-pokemon-item></app-pokemon-item>
+  <span class="index">{{ i }}</span>
+  <app-pokemon-item [name]="pokemon.name" [level]="pokemon.level"></app-pokemon-item>
 </ng-container>
 
 
