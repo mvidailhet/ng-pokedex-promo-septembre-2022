@@ -35,4 +35,9 @@ export class PokemonsListComponent {
       level: 1
     });
   }
+
+  onDeletePokemon(name: string, index: number) {
+    console.log(`deleting pokemon ${name}`);
+    this.pokemons.splice(index, 1);
+  }
 }

@@ -1,9 +1,9 @@
 <div class="pokemon-item row p-3" [ngClass]="{'sex-male': this.sex === 'male', 'sex-female': this.sex === 'female'}">
   <div class="col-9 name-col">
-    {{ name }}
+    {{ name }} - {{ level }}
   </div>
   <div class="col-3">
-    {{ level }}
+    <button (click)="onDeleteBtnClick()" class="btn btn-danger">Supprimer</button>
   </div>
 </div>
 

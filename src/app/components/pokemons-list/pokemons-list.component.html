@@ -21,7 +21,7 @@
 
 <ng-container *ngFor="let pokemon of pokemons; let i = index">
   <span class="index">{{ i }}</span>
-  <app-pokemon-item [name]="pokemon.name" [level]="pokemon.level"></app-pokemon-item>
+  <app-pokemon-item [name]="pokemon.name" (onDelete)="onDeletePokemon($event, i)" [level]="pokemon.level"></app-pokemon-item>
 </ng-container>
 
 
