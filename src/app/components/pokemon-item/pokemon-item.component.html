@@ -1,8 +1,8 @@
-<div class="pokemon-item" [ngClass]="{'sex-male': this.sex === 'male', 'sex-female': this.sex === 'female'}">
-  <div>
+<div class="pokemon-item row p-3" [ngClass]="{'sex-male': this.sex === 'male', 'sex-female': this.sex === 'female'}">
+  <div class="col-9">
     {{ name }}
   </div>
-  <div>
+  <div class="col-3">
     {{ level }}
   </div>
 </div>
