@@ -1,3 +1,12 @@
 <p>pokemon works!</p>
 
 <a routerLink="../..">go back to home</a>
+
+<div *ngIf="pokemon" class="row p-3 align-items-center">
+  <div class="col-4">
+    <img class="image" [src]="pokemon.picture ?? defaultImg" alt="pokemon image">
+  </div>
+  <div class="col-5 name-col">
+    {{ name }} - {{ pokemon.level }}
+  </div>
+</div>

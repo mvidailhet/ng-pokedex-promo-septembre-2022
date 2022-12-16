@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { PokemonService } from 'src/app/services/pokemon.service';
 import { Pokemon, PokemonSex } from 'src/app/typings/pokemon';
 
 @Component({
@@ -13,7 +14,11 @@ export class PokemonItemComponent {
   @Input() sex: PokemonSex = 'male';
   @Output() onDelete = new EventEmitter<string>();
 
-  defaultImg = 'https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=';
+  constructor(private pokemonService: PokemonService) {
+
+  }
+
+  defaultImg = this.pokemonService.defaultImg;
 
   getLevel() {
     return this.level.toString();

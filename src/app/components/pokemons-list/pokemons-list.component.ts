@@ -1,5 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { PokemonService } from 'src/app/services/pokemon.service';
 import { Pokemon, PokemonSex } from 'src/app/typings/pokemon';
 
 
@@ -16,22 +17,9 @@ export class PokemonsListComponent {
   currentPokemonSex: PokemonSex = 'male';
   hasAddedAPokemon = false;
 
-  pokemons: Pokemon[] = [
-    {
-      name: 'bulbizarre',
-      picture: 'https://www.pokepedia.fr/images/thumb/1/17/Dracaufeu-RFVF.png/764px-Dracaufeu-RFVF.png?20141019190201',
-      sex: 'male',
-      level: 3,
-    },
-    {
-      name: 'carapuce',
-      sex: 'female',
-      picture: 'https://www.pokepedia.fr/images/thumb/1/1f/Galeking-RS.png/596px-Galeking-RS.png?20161226235218',
-      level: 2,
-    },
-  ];
+  pokemons: Pokemon[] = this.pokemonService.pokemons;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private pokemonService: PokemonService) {
     setTimeout(() => {
       this.isButtonDisabled = false;
     }, 2000);
@@ -39,8 +27,8 @@ export class PokemonsListComponent {
 
   onAddPokemonBtnClick() {
     this.hasAddedAPokemon = true;
-    console.log(this.currentPokemonSex);
-    this.pokemons.push({
+
+    this.pokemonService.addPokemon({
       name: this.currentPokemonName,
       sex: this.currentPokemonSex,
       level: 1,
@@ -50,7 +38,7 @@ export class PokemonsListComponent {
 
   onDeletePokemon(name: string, index: number) {
     console.log(`deleting pokemon ${name}`);
-    this.pokemons.splice(index, 1);
+    this.pokemonService.deletePokemon(index);
   }
 
   goToPokemonPage() {
